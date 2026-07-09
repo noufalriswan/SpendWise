@@ -1,0 +1,274 @@
+{
+  "user": {
+    "id": 1,
+    "name": "Noufal Riswan",
+    "email": "noufal@example.com",
+    "avatar": "https://i.pravatar.cc/150?img=12"
+  },
+
+  "dashboard": {
+    "totalBalance": 4735.20,
+    "income": 7240.00,
+    "expenses": 2504.80,
+    "savings": 4735.20,
+
+    "balanceGrowth": 12.5,
+    "incomeGrowth": 8.2,
+    "expenseGrowth": -3.4,
+    "savingsGrowth": 18.6
+  },
+
+  "expenseOverview": [
+    {
+      "date": "2025-05-01",
+      "income": 3800,
+      "expense": 1900
+    },
+    {
+      "date": "2025-05-03",
+      "income": 3600,
+      "expense": 1700
+    },
+    {
+      "date": "2025-05-05",
+      "income": 4300,
+      "expense": 2000
+    },
+    {
+      "date": "2025-05-07",
+      "income": 5000,
+      "expense": 2800
+    },
+    {
+      "date": "2025-05-09",
+      "income": 4300,
+      "expense": 2500
+    },
+    {
+      "date": "2025-05-11",
+      "income": 4000,
+      "expense": 2000
+    },
+    {
+      "date": "2025-05-13",
+      "income": 4500,
+      "expense": 2300
+    },
+    {
+      "date": "2025-05-15",
+      "income": 5400,
+      "expense": 3000
+    },
+    {
+      "date": "2025-05-17",
+      "income": 4800,
+      "expense": 2600
+    },
+    {
+      "date": "2025-05-19",
+      "income": 4500,
+      "expense": 2100
+    },
+    {
+      "date": "2025-05-21",
+      "income": 5500,
+      "expense": 2700
+    },
+    {
+      "date": "2025-05-23",
+      "income": 6400,
+      "expense": 3400
+    },
+    {
+      "date": "2025-05-25",
+      "income": 6000,
+      "expense": 2900
+    },
+    {
+      "date": "2025-05-27",
+      "income": 5500,
+      "expense": 2500
+    },
+    {
+      "date": "2025-05-29",
+      "income": 5800,
+      "expense": 2700
+    },
+    {
+      "date": "2025-05-31",
+      "income": 7000,
+      "expense": 3900
+    }
+  ],
+
+  "expenseCategories": [
+    {
+      "id": 1,
+      "category": "Food & Dining",
+      "percentage": 35,
+      "amount": 876.68,
+      "color": "#ff4d79"
+    },
+    {
+      "id": 2,
+      "category": "Transport",
+      "percentage": 20,
+      "amount": 501.02,
+      "color": "#4e8cff"
+    },
+    {
+      "id": 3,
+      "category": "Shopping",
+      "percentage": 15,
+      "amount": 375.72,
+      "color": "#ffb400"
+    },
+    {
+      "id": 4,
+      "category": "Bills & Utilities",
+      "percentage": 10,
+      "amount": 250.48,
+      "color": "#2ecc71"
+    },
+    {
+      "id": 5,
+      "category": "Entertainment",
+      "percentage": 8,
+      "amount": 200.38,
+      "color": "#7d5fff"
+    },
+    {
+      "id": 6,
+      "category": "Others",
+      "percentage": 12,
+      "amount": 300.52,
+      "color": "#7f8fa6"
+    }
+  ],
+
+  "transactions": [
+    {
+      "id": 1,
+      "title": "Grocery Shopping",
+      "category": "Food & Dining",
+      "type": "Expense",
+      "amount": -65.24,
+      "date": "2025-05-30",
+      "icon": "shopping-cart"
+    },
+    {
+      "id": 2,
+      "title": "Salary",
+      "category": "Income",
+      "type": "Income",
+      "amount": 3200.00,
+      "date": "2025-05-30",
+      "icon": "wallet"
+    },
+    {
+      "id": 3,
+      "title": "Electricity Bill",
+      "category": "Bills & Utilities",
+      "type": "Expense",
+      "amount": -120.50,
+      "date": "2025-05-29",
+      "icon": "bolt"
+    },
+    {
+      "id": 4,
+      "title": "Taxi to Office",
+      "category": "Transport",
+      "type": "Expense",
+      "amount": -15.30,
+      "date": "2025-05-28",
+      "icon": "car"
+    },
+    {
+      "id": 5,
+      "title": "Netflix Subscription",
+      "category": "Entertainment",
+      "type": "Expense",
+      "amount": -12.99,
+      "date": "2025-05-27",
+      "icon": "tv"
+    },
+    {
+      "id": 6,
+      "title": "Restaurant",
+      "category": "Food & Dining",
+      "type": "Expense",
+      "amount": -48.20,
+      "date": "2025-05-26",
+      "icon": "utensils"
+    },
+    {
+      "id": 7,
+      "title": "Freelance Project",
+      "category": "Income",
+      "type": "Income",
+      "amount": 850.00,
+      "date": "2025-05-25",
+      "icon": "briefcase"
+    },
+    {
+      "id": 8,
+      "title": "Amazon Shopping",
+      "category": "Shopping",
+      "type": "Expense",
+      "amount": -245.99,
+      "date": "2025-05-24",
+      "icon": "shopping-bag"
+    }
+  ],
+
+  "budgets": [
+    {
+      "id": 1,
+      "category": "Food",
+      "limit": 1000,
+      "spent": 876.68
+    },
+    {
+      "id": 2,
+      "category": "Shopping",
+      "limit": 700,
+      "spent": 375.72
+    },
+    {
+      "id": 3,
+      "category": "Transport",
+      "limit": 600,
+      "spent": 501.02
+    }
+  ],
+
+  "goals": [
+    {
+      "id": 1,
+      "title": "Emergency Fund",
+      "target": 10000,
+      "saved": 4735.20,
+      "progress": 47
+    },
+    {
+      "id": 2,
+      "title": "New Laptop",
+      "target": 1500,
+      "saved": 900,
+      "progress": 60
+    }
+  ],
+
+  "notifications": [
+    {
+      "id": 1,
+      "message": "Salary received successfully.",
+      "read": false
+    },
+    {
+      "id": 2,
+      "message": "Electricity bill is due tomorrow.",
+      "read": true
+    }
+  ]
+}
