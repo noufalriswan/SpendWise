@@ -444,7 +444,7 @@ img {
 /* History */
 
 .recent-card {
-  width: 30%;
+  width: 31%;
   background: #18233b;
   border-radius: 18px;
   padding: 25px;
@@ -529,61 +529,63 @@ img {
 /* GoalCard */
 
 .goal-card {
-    width: 29.5%;
-    min-height: 420px;
-    margin-right: 25px;
-    background: linear-gradient(180deg,#10222c,#122a25);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 18px;
-    padding: 30px 25px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  width: 29.5%;
+  min-height: 420px;
+  margin-right: 25px;
+  background: linear-gradient(180deg, #10222c, #122a25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 30px 25px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
-.goal-image{
-    width:100%;
-    display:flex;
-    justify-content:center;
+.goal-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.goal-image img{
-    width:180px;
-    object-fit:contain;
+.goal-image img {
+  width: 180px;
+  object-fit: contain;
 }
 
-.goal-card h2{
-    color:#fff;
-    font-size:32px;
-    font-weight:700;
-    margin-top:10px;
+.goal-card h2 {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 10px;
 }
 
-.goal-card p{
-    color:#b7c1d4;
-    font-size:18px;
-    line-height:1.6;
-    margin:20px 0;
+.goal-card p {
+  color: #b7c1d4;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 20px 0;
 }
 
-.goal-btn{
-    width:100%;
-    height:55px;
-    border:none;
-    border-radius:12px;
-    background:#1ecb69;
-    color:#fff;
-    font-size:20px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
+.goal-btn {
+  width: 100%;
+  height: 55px;
+  border: none;
+  border-radius: 12px;
+  background: #1ecb69;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.goal-btn:hover{
-    background:#17b55d;
-    transform:translateY(-2px);
+.goal-btn:hover {
+  background: #17b55d;
+  transform: translateY(-2px);
 }
+
+/* History */

@@ -7,8 +7,8 @@ const router = express.Router();
 router.get("/", async (req, res) => {
     try {
         const data = await TransactionHistory.find().sort({ createdAt: -1 });
-
-        res.json(data);
+        const count = await TransactionHistory.countDocuments();
+        res.json({count,data});
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
