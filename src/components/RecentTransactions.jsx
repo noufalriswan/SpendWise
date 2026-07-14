@@ -11,7 +11,7 @@ function RecentTransactions() {
                 "http://localhost:5000/api/transaction-history"
             );
 
-            setTransactions(res.data);
+            setTransactions(res.data.data);
 
         } catch (err) {
             console.log(err);

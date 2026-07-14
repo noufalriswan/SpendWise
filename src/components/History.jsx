@@ -1,139 +1,151 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function History() {
+
+    const [transactions, setTransactions] = useState([]);
+
+    const getTransactions = () => {
+        axios
+            .get("http://localhost:5000/api/transaction-history")
+            .then((res) => {
+                console.log(res.data);
+                setTransactions(res.data.data);
+            })
+            .catch((err) => console.log(err));
+    };
+
+    useEffect(() => {
+        getTransactions();
+    }, []);
+
     return (
-        <>
-            {/* <div className='History-container border me-3 p-3 mt-3'>
-                <div className='btn-group gap-2'>
-                    <button>All Transaction</button>
-                    <button><i class="bi bi-circle-fill text-success"></i>Income</button>
-                    <button><i class="bi bi-circle-fill text-danger"></i>Expense</button>
+        <div className="Log-container">
+            <div className="transaction-buttons w-100">
+                <button className="active-btn">
+                    All Transactions
+                </button>
+                <button className="income-btn">
+                    <i className="bi bi-circle-fill"></i>
+                    Income
+                </button>
+                <button className="expense-btn">
+                    <i className="bi bi-circle-fill"></i>
+                    Expense
+                </button>
+                <div className="ms-auto">
+                    <button className="add-btn">
+                        <i className="bi bi-plus"></i>
+                        Add Transaction
+                    </button>
                 </div>
-            </div> */}
-            <div className="transaction-page">
+            </div>
 
-                {/* Header */}
-                <div className="transaction-header">
-
-                    <div className="left-header">
-                        <button className="active-btn">
-                            All Transactions
-                        </button>
-
-                        <span className="income-dot">
-                            ● Income
-                        </span>
-
-                        <span className="expense-dot">
-                            ● Expense
-                        </span>
-                    </div>
-
-                    <div className="right-header">
-                        <select>
-                            <option>This Month</option>
-                        </select>
-
-                        <button className="add-btn">
-                            <i className="bi bi-plus"></i>
-                            Add Transaction
-                        </button>
-                    </div>
-                </div>
-
-                {/* Filters */}
-
-                <div className="filters">
-
+            <div className="filter-section">
+                <div className="search-box">
+                    <i className="bi bi-search"></i>
                     <input
                         type="text"
                         placeholder="Search transaction..."
                     />
-                    <select>
-                        <option>Category</option>
-                    </select>
-                    <select>
-                        <option>Type</option>
-                    </select>
-                    <select>
-                        <option>Payment Method</option>
-                    </select>
-                    <select>
-                        <option>Newest</option>
-                    </select>
                 </div>
-                {/* Table */}
-                <table className="transaction-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Category</th>
-                            <th>Description</th>
-                            <th>Payment</th>
-                            <th>Amount</th>
-                            <th>Type</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
 
-                    {/*  <tbody>
-
-                        <tr>
-
-                            <td>
-                                May 30
-                            </td>
-
-                            <td>
-                                Grocery
-                            </td>
-
-                            <td>
-                                Grocery Shopping
-                            </td>
-
-                            <td>
-                                Credit Card
-                            </td>
-
-                            <td className="expense">
-                                -$65.24
-                            </td>
-
-                            <td>
-
-                                <span className="expense-badge">
-                                    Expense
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                <span className="completed">
-                                    Completed
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                <i className="bi bi-pencil"></i>
-
-                                <i className="bi bi-trash ms-3"></i>
-
-                            </td>
-
-                        </tr>
-
-                    </tbody>
- */}
-                </table>
-
+                <select>
+                    <option>Category</option>
+                    <option>Food</option>
+                    <option>Shopping</option>
+                    <option>Transport</option>
+                    <option>Salary</option>
+                    <option>Bills</option>
+                </select>
+                <select>
+                    <option>Type</option>
+                    <option>Income</option>
+                    <option>Expense</option>
+                </select>
+                <select>
+                    <option>Payment Method</option>
+                    <option>Cash</option>
+                    <option>Credit Card</option>
+                    <option>Debit Card</option>
+                    <option>UPI</option>
+                </select>
+                <select>
+                    <option>Sort By Newest</option>
+                    <option>Newest</option>
+                    <option>Oldest</option>
+                </select>
+                <button className="filter-btn">
+                    <i className="bi bi-funnel"></i>
+                </button>
             </div>
-        </>
-    )
+
+            <table className="transaction-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {transactions.length > 0 ? (
+                        transactions.map((item) => (
+                            <tr key={item._id}>
+                                <td>
+                                    {new Date(item.date).toLocaleDateString()}
+                                </td>
+                                <td>{item.category}</td>
+                                <td>{item.title}</td>
+                                <td
+                                    style={{
+                                        color:
+                                            item.type === "Income"
+                                                ? "#22c55e"
+                                                : "#ef4444",
+                                        fontWeight: "bold",
+                                    }}
+                                >
+                                    {item.type === "Income" ? "+" : "-"}$
+                                    {item.amount}
+                                </td>
+
+                                <td>
+
+                                    <span
+                                        className={
+                                            item.type === "Income"
+                                                ? "income-badge"
+                                                : "expense-badge"
+                                        }
+                                    >
+                                        {item.type}
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+                        ))
+
+                    ) : (
+
+                        <tr>
+                            <td colSpan="5" style={{ textAlign: "center" }}>
+                                No Transactions Found
+                            </td>
+                        </tr>
+
+                    )}
+
+                </tbody>
+
+            </table>
+
+        </div>
+    );
 }
 
-export default History
+export default History;

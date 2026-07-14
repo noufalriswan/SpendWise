@@ -61,7 +61,6 @@ function Transaction() {
 
                             <div className="dashboard-content">
                                 <p className="card-title">Total Balance</p>
-
                                 <h2 className="card-amount">{count}</h2>
                             </div>
                         </div>

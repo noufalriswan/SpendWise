@@ -3,6 +3,7 @@ import logo from "../assets/logo.png";
 import profile from "../assets/profile.jpg";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Sidebar() {
 
@@ -32,40 +33,43 @@ function Sidebar() {
                         <p>Expense Tracker</p>
                     </div>
                 </div>
-                {/* Navigation */}
                 <div className="navbar-btn">
-                    <Link className="active" to="/dashboard">
+                    <NavLink to="/" end>
                         <i className="bi bi-house-door-fill"></i>
                         Dashboard
-                    </Link>
-                    <Link to="/transaction">
+                    </NavLink>
+
+                    <NavLink to="/transaction">
                         <i className="bi bi-wallet2"></i>
                         Transactions
-                    </Link>
-                    <Link to="/addtransaction">
+                    </NavLink>
+
+                    <NavLink to="/addtransaction">
                         <i className="bi bi-plus-circle-fill"></i>
                         Add Transaction
-                    </Link>
-                    <Link to="/catogories">
+                    </NavLink>
+                    <NavLink to="/catogories">
                         <i className="bi bi-grid-fill"></i>
                         Categories
-                    </Link>
-                    <Link className="report">
+                    </NavLink>
+                    <NavLink to="/reoprt">
                         <i className="bi bi-bar-chart-fill"></i>
                         Reports
-                    </Link>
-                    <Link to="/budgets">
+                    </NavLink>
+                    <NavLink to="/budgets">
                         <i className="bi bi-pie-chart-fill"></i>
                         Budgets
-                    </Link>
-                    <Link to="/goals">
+                    </NavLink>
+                    <NavLink to="/goals">
                         <i className="bi bi-bullseye"></i>
                         Goals
-                    </Link>
-                    <Link to="/setting">
+                    </NavLink>
+                    <NavLink to="/setting">
                         <i className="bi bi-gear-fill"></i>
                         Settings
-                    </Link>
+                    </NavLink>
+
+
                 </div>
                 {/* Upgrade Card */}
                 <div className="upgrade-card">
@@ -82,22 +86,24 @@ function Sidebar() {
                 </div>
             </div>
             {/* Profile */}
-            {users.map((user) => (
-                <div className="profile-container mt-3" key={user._id}>
-                    <div className="profile-left">
-                        <img
-                            src={profile}
-                            alt="Profile"
-                        />
-                        <div>
-                            <h5>{user.fullName}</h5>
-                            <p>{user.email}</p>
+            {
+                users.map((user) => (
+                    <div className="profile-container mt-3" key={user._id}>
+                        <div className="profile-left">
+                            <img
+                                src={profile}
+                                alt="Profile"
+                            />
+                            <div>
+                                <h5>{user.fullName}</h5>
+                                <p>{user.email}</p>
+                            </div>
                         </div>
+                        <i className="bi bi-chevron-down"></i>
                     </div>
-                    <i className="bi bi-chevron-down"></i>
-                </div>
-            ))}
-        </div>
+                ))
+            }
+        </div >
     );
 }
 

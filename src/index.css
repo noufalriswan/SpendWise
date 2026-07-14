@@ -55,42 +55,31 @@ body {
 
 /* Navigation */
 
-.navbar-btn {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.navbar-btn a{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    font-size: 19px;
+    padding:12px 18px;
+    text-decoration:none;
+    color:#9ca3af;
+    border-radius:10px;
+    transition:.3s;
 }
 
-.navbar-btn a {
-  text-decoration: none;
-  width: 100%;
-  height: 55px;
-  border: none;
-  background: transparent;
-  color: #cfd6e4;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 0 18px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
+.navbar-btn a:hover{
+    background:#1f2937;
+    color:#fff;
 }
 
-.navbar-btn a i {
-  font-size: 20px;
+/* Active page */
+.navbar-btn a.active{
+    background:#7c3aed;     /* Purple background */
+    color:#fff;             /* White text */
 }
 
-.navbar-btn a:hover {
-  background: #1d2a43;
-  color: #fff;
-}
-
-.navbar-btn .active {
-  background: linear-gradient(90deg, #6948ff, #8458ff);
-  color: #fff;
-  box-shadow: 0 8px 25px rgba(108, 72, 255, 0.35);
+.navbar-btn a.active i{
+    color:#fff;             /* White icon */
 }
 
 /* Upgrade */
@@ -589,3 +578,205 @@ img {
 }
 
 /* History */
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #111827;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.transaction-table thead {
+  background: #1e293b;
+}
+
+.transaction-table th {
+  padding: 18px;
+  text-align: left;
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+.transaction-table td {
+  padding: 18px;
+  border-top: 1px solid #273449;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.transaction-table tbody tr {
+  transition: 0.3s;
+}
+
+.transaction-table tbody tr:hover {
+  background: #182337;
+}
+
+.transaction-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #111827;
+  border: 1px solid #25324a;
+  border-radius: 12px;
+  padding: 12px 18px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transaction-buttons button {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  padding: 17px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.transaction-buttons button:hover {
+  background: #1f2937;
+  color: #fff;
+}
+
+.active-btn {
+  background: linear-gradient(90deg, #6d5efc, #8d63ff) !important;
+  color: #fff !important;
+}
+
+.income-btn i {
+  color: #22c55e;
+  font-size: 10px;
+}
+
+.expense-btn i {
+  color: #ef476f;
+  font-size: 10px;
+}
+
+.ms-auto .add-btn {
+  background: linear-gradient(90deg, #6d5efc, #8d63ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+}
+/* Filter Section */
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/* Search */
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #121b2f;
+  border: 1px solid #2d3748;
+  border-radius: 10px;
+  padding: 0 15px;
+  width: 300px;
+  height: 45px;
+}
+
+.search-box i {
+  color: #7c8aa5;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.search-box input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+}
+
+.search-box input::placeholder {
+  color: #7c8aa5;
+}
+
+/* Select */
+
+.filter-section select {
+  width: 182px;
+  height: 45px;
+  background: #121b2f;
+  color: white;
+  border: 1px solid #2d3748;
+  border-radius: 10px;
+  padding: 0 12px;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filter-section select:hover {
+  border-color: #6d5efc;
+}
+
+/* Filter Button */
+
+.filter-btn {
+  width: 45px;
+  height: 45px;
+  background: #121b2f;
+  color: white;
+  border: 1px solid #2d3748;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-btn:hover {
+  background: #6d5efc;
+  border-color: #6d5efc;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+  .filter-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box,
+  .filter-section select,
+  .filter-btn {
+    width: 100%;
+  }
+}
+
+.Log-container {
+  margin-top: 10px;
+  margin-right: 20px;
+  border:1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 15px;
+}
