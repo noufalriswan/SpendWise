@@ -9,6 +9,8 @@ function QuickTransaction() {
     const [category, setCategory] = useState("");
     const [date, setDate] = useState("");
 
+    const user = JSON.parse(localStorage.getItem("user"));
+
     const addTransaction = async () => {
 
         try {
@@ -24,6 +26,7 @@ function QuickTransaction() {
             const res = await axios.post(
                 "http://localhost:5000/api/transaction-history",
                 {
+                    userId: user._id,
                     title,
                     amount: Number(amount),
                     type,
@@ -36,7 +39,7 @@ function QuickTransaction() {
 
             alert("Transaction Added Successfully");
             window.location.reload();
-            
+
             window.refersh()
             setTitle("");
             setAmount("");

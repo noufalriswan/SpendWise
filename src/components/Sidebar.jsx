@@ -34,7 +34,7 @@ function Sidebar() {
                     </div>
                 </div>
                 <div className="navbar-btn">
-                    <NavLink to="/" end>
+                    <NavLink to="/dashboard" end>
                         <i className="bi bi-house-door-fill"></i>
                         Dashboard
                     </NavLink>

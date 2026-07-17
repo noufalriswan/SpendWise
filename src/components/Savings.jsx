@@ -4,10 +4,12 @@ import axios from 'axios'
 
 function Savings() {
     const [Saving, setSaving] = useState([]);
+    
+    const user = JSON.parse(localStorage.getItem("user"));
 
     useEffect(() => {
         axios
-            .get("http://localhost:5000/api/transactions")
+            .get(`http://localhost:5000/api/transactions/${user._id}`)
             .then((res) => {
                 setSaving(res.data);
             })

@@ -6,9 +6,11 @@ import total from '../assets/total-removebg-preview.png'
 function TotalBalance() {
     const [Total, setTotal] = useState([]);
 
+    const user = JSON.parse(localStorage.getItem("user"));
+
     useEffect(() => {
         axios
-            .get("http://localhost:5000/api/transactions")
+            .get(`http://localhost:5000/api/transactions/${user._id}`)
             .then((res) => {
                 setTotal(res.data);
             })

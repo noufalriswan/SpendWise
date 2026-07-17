@@ -3,7 +3,7 @@ import Transaction from "../models/Transaction.js";
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+router.get("/:userId", async (req, res) => {
   try {
     const transactions = await Transaction.find();
 

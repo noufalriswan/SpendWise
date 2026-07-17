@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import userRoutes from "./routes/users.js";
 import transactionRoutes from "./routes/transactions.js";
 import transactionHistoryRoutes from "./routes/transactionHistory.js";
+import loginRoutes from "./routes/login.js";
 import cors from "cors";
 
 const app = express();
@@ -13,6 +14,8 @@ app.use(cors());
 
 
 app.use("/api/users", userRoutes);
+
+app.use("/api/login", loginRoutes);
 
 app.use("/api/transactions", transactionRoutes);
 

@@ -6,9 +6,11 @@ import expense from '../assets/expense-removebg-preview.png'
 function Expense() {
     const [Expense, setExpense] = useState([]);
 
+    const user = JSON.parse(localStorage.getItem("user"));
+
     useEffect(() => {
         axios
-            .get("http://localhost:5000/api/transactions")
+            .get(`http://localhost:5000/api/transactions/${user._id}`)
             .then((res) => {
                 setExpense(res.data);
             })
